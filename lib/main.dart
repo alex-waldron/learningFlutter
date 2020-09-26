@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questIndex = 0;
-  var questions = [
+  final questions = const[
     {
       "question": "What's your favorite color?",
       "answers": ["black", "blue", "red"]
@@ -50,10 +50,9 @@ class _MyAppState extends State<MyApp> {
           Question(
             questions[_questIndex]["question"],
           ),
-          (questions[_questIndex]['answers'] as List<String>).map((answer) {
-
-            return Answer(_answerQuestion, answer)
-          })
+          ...(questions[_questIndex]['answers'] as List<String>).map((answer) {
+            return Answer(_answerQuestion, answer);
+          }).toList()
         ]),
       ),
     );

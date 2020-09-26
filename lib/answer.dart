@@ -12,7 +12,7 @@ Answer(this.selectHandler, this.answerText);
       child:RaisedButton(
           color: Colors.blue,
           textColor: Colors.white,
-          child: Text("Answer 1"),
+          child: Text(answerText),
           onPressed: selectHandler,
           ),
     );
